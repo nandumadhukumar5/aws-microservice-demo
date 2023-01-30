@@ -83,5 +83,37 @@ def lambda_handler(event, context):
 ```        
 
 ## Step 3: Create a DynamoDB table
+
+
+
 ## Step 4: Create API Gateway
+
+1. Login to AWS console
+2. Open AWS API Gateway service
+3. Choose REST API and click on build
+4. Actions -> Create Resource: Choose the Lambda function created before
+5. Actions -> Create Method: Choose POST
+6. Action -> Deploy API
+
 ## Step 5: Deploy and Test the API
+
+1. Use postman GUI/ Run locally from CLI
+2. Use the Invoke URL from the console and use the sample body JSON below
+
+### Sample Body 
+
+```
+{
+    "operation": "create",
+    "tableName": "lambda-apigateway",
+    "payload": {
+        "Item": {
+            "id": "1234ABCD",
+            "number": 5
+        }
+    }
+}
+
+```
+## Step 6: Once the testing is completed, remove the resources created to avoid charges
+
